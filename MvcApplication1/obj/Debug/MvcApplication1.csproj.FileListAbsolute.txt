@@ -1,0 +1,56 @@
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\MvcApplication1.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\MvcApplication1.pdb
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\EntityFramework.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\Microsoft.Web.Infrastructure.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\Newtonsoft.Json.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Net.Http.Formatting.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Helpers.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Http.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Http.WebHost.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Mvc.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Razor.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Deployment.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Razor.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\EntityFramework.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\Newtonsoft.Json.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Net.Http.Formatting.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Helpers.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Http.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Http.WebHost.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Mvc.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Razor.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Deployment.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Razor.xml
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.csprojResolveAssemblyReference.cache
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.dll
+E:\Domingo Savio Cosas\16.-Programacion web 2\Agenda\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.pdb
+F:\Agenda\MvcApplication1\MvcApplication1\bin\MvcApplication1.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\MvcApplication1.pdb
+F:\Agenda\MvcApplication1\MvcApplication1\bin\EntityFramework.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\Microsoft.Web.Infrastructure.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\Newtonsoft.Json.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Net.Http.Formatting.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Helpers.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Http.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Http.WebHost.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Mvc.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Razor.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Deployment.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Razor.dll
+F:\Agenda\MvcApplication1\MvcApplication1\bin\EntityFramework.xml
+F:\Agenda\MvcApplication1\MvcApplication1\bin\Newtonsoft.Json.xml
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Net.Http.Formatting.xml
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Helpers.xml
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Http.xml
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Http.WebHost.xml
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Mvc.xml
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.Razor.xml
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.xml
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Deployment.xml
+F:\Agenda\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Razor.xml
+F:\Agenda\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.csprojResolveAssemblyReference.cache
+F:\Agenda\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.dll
+F:\Agenda\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.pdb

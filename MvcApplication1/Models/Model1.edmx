@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bdagendaModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="bdagendaModelStoreContainer">
+          <EntitySet Name="tbagenda" EntityType="bdagendaModel.Store.tbagenda" store:Type="Tables" Schema="bdagenda" />
+          <EntitySet Name="tbarchivo" EntityType="bdagendaModel.Store.tbarchivo" store:Type="Tables" Schema="bdagenda" />
+          <EntitySet Name="tbnotas" EntityType="bdagendaModel.Store.tbnotas" store:Type="Tables" Schema="bdagenda" />
+          <EntitySet Name="tbpersona" EntityType="bdagendaModel.Store.tbpersona" store:Type="Tables" Schema="bdagenda" />
+          <EntitySet Name="tbusuario" EntityType="bdagendaModel.Store.tbusuario" store:Type="Tables" Schema="bdagenda" />
+          <AssociationSet Name="fk_agenda_usuario" Association="bdagendaModel.Store.fk_agenda_usuario">
+            <End Role="tbusuario" EntitySet="tbusuario" />
+            <End Role="tbagenda" EntitySet="tbagenda" />
+          </AssociationSet>
+          <AssociationSet Name="fk_notas_agenda" Association="bdagendaModel.Store.fk_notas_agenda">
+            <End Role="tbagenda" EntitySet="tbagenda" />
+            <End Role="tbnotas" EntitySet="tbnotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbarchivo" Association="bdagendaModel.Store.FK_tbarchivo">
+            <End Role="tbnotas" EntitySet="tbnotas" />
+            <End Role="tbarchivo" EntitySet="tbarchivo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuario_persona" Association="bdagendaModel.Store.fk_usuario_persona">
+            <End Role="tbpersona" EntitySet="tbpersona" />
+            <End Role="tbusuario" EntitySet="tbusuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbagenda">
+          <Key>
+            <PropertyRef Name="cod_agenda" />
+          </Key>
+          <Property Name="cod_agenda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cod_usuario" Type="int" />
+          <Property Name="fecha" Type="date" />
+        </EntityType>
+        <EntityType Name="tbarchivo">
+          <Key>
+            <PropertyRef Name="cod_archivo" />
+          </Key>
+          <Property Name="cod_archivo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cod_notas" Type="int" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="formato" Type="varchar" MaxLength="50" />
+          <Property Name="tamaño" Type="varchar" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbnotas">
+          <Key>
+            <PropertyRef Name="cod_notas" />
+          </Key>
+          <Property Name="cod_notas" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cod_agenda" Type="int" />
+          <Property Name="titulo" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_creacion" Type="date" />
+        </EntityType>
+        <EntityType Name="tbpersona">
+          <Key>
+            <PropertyRef Name="cod_persona" />
+          </Key>
+          <Property Name="cod_persona" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="ap_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="ap_materno" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="int" />
+          <Property Name="fecha_creacion" Type="date" />
+        </EntityType>
+        <EntityType Name="tbusuario">
+          <Key>
+            <PropertyRef Name="cod_usuario" />
+          </Key>
+          <Property Name="cod_usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cod_persona" Type="int" />
+          <Property Name="login" Type="varchar" MaxLength="50" />
+          <Property Name="pass" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_creacion" Type="date" />
+        </EntityType>
+        <Association Name="fk_agenda_usuario">
+          <End Role="tbusuario" Type="bdagendaModel.Store.tbusuario" Multiplicity="0..1" />
+          <End Role="tbagenda" Type="bdagendaModel.Store.tbagenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbusuario">
+              <PropertyRef Name="cod_usuario" />
+            </Principal>
+            <Dependent Role="tbagenda">
+              <PropertyRef Name="cod_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_notas_agenda">
+          <End Role="tbagenda" Type="bdagendaModel.Store.tbagenda" Multiplicity="0..1" />
+          <End Role="tbnotas" Type="bdagendaModel.Store.tbnotas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbagenda">
+              <PropertyRef Name="cod_agenda" />
+            </Principal>
+            <Dependent Role="tbnotas">
+              <PropertyRef Name="cod_agenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbarchivo">
+          <End Role="tbnotas" Type="bdagendaModel.Store.tbnotas" Multiplicity="0..1" />
+          <End Role="tbarchivo" Type="bdagendaModel.Store.tbarchivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbnotas">
+              <PropertyRef Name="cod_notas" />
+            </Principal>
+            <Dependent Role="tbarchivo">
+              <PropertyRef Name="cod_notas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuario_persona">
+          <End Role="tbpersona" Type="bdagendaModel.Store.tbpersona" Multiplicity="0..1" />
+          <End Role="tbusuario" Type="bdagendaModel.Store.tbusuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbpersona">
+              <PropertyRef Name="cod_persona" />
+            </Principal>
+            <Dependent Role="tbusuario">
+              <PropertyRef Name="cod_persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdagendaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="bdagendaEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tbagenda" EntityType="bdagendaModel.tbagenda" />
+          <EntitySet Name="tbarchivo" EntityType="bdagendaModel.tbarchivo" />
+          <EntitySet Name="tbnotas" EntityType="bdagendaModel.tbnotas" />
+          <EntitySet Name="tbpersona" EntityType="bdagendaModel.tbpersona" />
+          <EntitySet Name="tbusuario" EntityType="bdagendaModel.tbusuario" />
+          <AssociationSet Name="fk_agenda_usuario" Association="bdagendaModel.fk_agenda_usuario">
+            <End Role="tbusuario" EntitySet="tbusuario" />
+            <End Role="tbagenda" EntitySet="tbagenda" />
+          </AssociationSet>
+          <AssociationSet Name="fk_notas_agenda" Association="bdagendaModel.fk_notas_agenda">
+            <End Role="tbagenda" EntitySet="tbagenda" />
+            <End Role="tbnotas" EntitySet="tbnotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbarchivo" Association="bdagendaModel.FK_tbarchivo">
+            <End Role="tbnotas" EntitySet="tbnotas" />
+            <End Role="tbarchivo" EntitySet="tbarchivo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuario_persona" Association="bdagendaModel.fk_usuario_persona">
+            <End Role="tbpersona" EntitySet="tbpersona" />
+            <End Role="tbusuario" EntitySet="tbusuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbagenda">
+          <Key>
+            <PropertyRef Name="cod_agenda" />
+          </Key>
+          <Property Name="cod_agenda" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cod_usuario" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbusuario" Relationship="bdagendaModel.fk_agenda_usuario" FromRole="tbagenda" ToRole="tbusuario" />
+          <NavigationProperty Name="tbnotas" Relationship="bdagendaModel.fk_notas_agenda" FromRole="tbagenda" ToRole="tbnotas" />
+        </EntityType>
+        <EntityType Name="tbarchivo">
+          <Key>
+            <PropertyRef Name="cod_archivo" />
+          </Key>
+          <Property Name="cod_archivo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cod_notas" Type="Int32" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="formato" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="tamaño" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tbnotas" Relationship="bdagendaModel.FK_tbarchivo" FromRole="tbarchivo" ToRole="tbnotas" />
+        </EntityType>
+        <EntityType Name="tbnotas">
+          <Key>
+            <PropertyRef Name="cod_notas" />
+          </Key>
+          <Property Name="cod_notas" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cod_agenda" Type="Int32" />
+          <Property Name="titulo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_creacion" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbagenda" Relationship="bdagendaModel.fk_notas_agenda" FromRole="tbnotas" ToRole="tbagenda" />
+          <NavigationProperty Name="tbarchivo" Relationship="bdagendaModel.FK_tbarchivo" FromRole="tbnotas" ToRole="tbarchivo" />
+        </EntityType>
+        <EntityType Name="tbpersona">
+          <Key>
+            <PropertyRef Name="cod_persona" />
+          </Key>
+          <Property Name="cod_persona" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ap_paterno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ap_materno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="estado" Type="Int32" />
+          <Property Name="fecha_creacion" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbusuario" Relationship="bdagendaModel.fk_usuario_persona" FromRole="tbpersona" ToRole="tbusuario" />
+        </EntityType>
+        <EntityType Name="tbusuario">
+          <Key>
+            <PropertyRef Name="cod_usuario" />
+          </Key>
+          <Property Name="cod_usuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cod_persona" Type="Int32" />
+          <Property Name="login" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="pass" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_creacion" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbagenda" Relationship="bdagendaModel.fk_agenda_usuario" FromRole="tbusuario" ToRole="tbagenda" />
+          <NavigationProperty Name="tbpersona" Relationship="bdagendaModel.fk_usuario_persona" FromRole="tbusuario" ToRole="tbpersona" />
+        </EntityType>
+        <Association Name="fk_agenda_usuario">
+          <End Role="tbusuario" Type="bdagendaModel.tbusuario" Multiplicity="0..1" />
+          <End Role="tbagenda" Type="bdagendaModel.tbagenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbusuario">
+              <PropertyRef Name="cod_usuario" />
+            </Principal>
+            <Dependent Role="tbagenda">
+              <PropertyRef Name="cod_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_notas_agenda">
+          <End Role="tbagenda" Type="bdagendaModel.tbagenda" Multiplicity="0..1" />
+          <End Role="tbnotas" Type="bdagendaModel.tbnotas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbagenda">
+              <PropertyRef Name="cod_agenda" />
+            </Principal>
+            <Dependent Role="tbnotas">
+              <PropertyRef Name="cod_agenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbarchivo">
+          <End Role="tbnotas" Type="bdagendaModel.tbnotas" Multiplicity="0..1" />
+          <End Role="tbarchivo" Type="bdagendaModel.tbarchivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbnotas">
+              <PropertyRef Name="cod_notas" />
+            </Principal>
+            <Dependent Role="tbarchivo">
+              <PropertyRef Name="cod_notas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuario_persona">
+          <End Role="tbpersona" Type="bdagendaModel.tbpersona" Multiplicity="0..1" />
+          <End Role="tbusuario" Type="bdagendaModel.tbusuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbpersona">
+              <PropertyRef Name="cod_persona" />
+            </Principal>
+            <Dependent Role="tbusuario">
+              <PropertyRef Name="cod_persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdagendaModelStoreContainer" CdmEntityContainer="bdagendaEntities">
+          <EntitySetMapping Name="tbagenda">
+            <EntityTypeMapping TypeName="bdagendaModel.tbagenda">
+              <MappingFragment StoreEntitySet="tbagenda">
+                <ScalarProperty Name="cod_agenda" ColumnName="cod_agenda" />
+                <ScalarProperty Name="cod_usuario" ColumnName="cod_usuario" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbarchivo">
+            <EntityTypeMapping TypeName="bdagendaModel.tbarchivo">
+              <MappingFragment StoreEntitySet="tbarchivo">
+                <ScalarProperty Name="cod_archivo" ColumnName="cod_archivo" />
+                <ScalarProperty Name="cod_notas" ColumnName="cod_notas" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="formato" ColumnName="formato" />
+                <ScalarProperty Name="tamaño" ColumnName="tamaño" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbnotas">
+            <EntityTypeMapping TypeName="bdagendaModel.tbnotas">
+              <MappingFragment StoreEntitySet="tbnotas">
+                <ScalarProperty Name="cod_notas" ColumnName="cod_notas" />
+                <ScalarProperty Name="cod_agenda" ColumnName="cod_agenda" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbpersona">
+            <EntityTypeMapping TypeName="bdagendaModel.tbpersona">
+              <MappingFragment StoreEntitySet="tbpersona">
+                <ScalarProperty Name="cod_persona" ColumnName="cod_persona" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="ap_paterno" ColumnName="ap_paterno" />
+                <ScalarProperty Name="ap_materno" ColumnName="ap_materno" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbusuario">
+            <EntityTypeMapping TypeName="bdagendaModel.tbusuario">
+              <MappingFragment StoreEntitySet="tbusuario">
+                <ScalarProperty Name="cod_usuario" ColumnName="cod_usuario" />
+                <ScalarProperty Name="cod_persona" ColumnName="cod_persona" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

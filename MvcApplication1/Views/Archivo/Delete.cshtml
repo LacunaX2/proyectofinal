@@ -1,0 +1,67 @@
+﻿@model MvcApplication1.Models.tbarchivo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbarchivo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cod_archivo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cod_archivo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbnotas.titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbnotas.titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.formato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.formato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tamaño)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tamaño)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.direccion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccion)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

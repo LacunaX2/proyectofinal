@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdagendaModelStoreContainer" CdmEntityContainer="bdagendaEntities">
+    <EntitySetMapping Name="tbagenda">
+      <EntityTypeMapping TypeName="bdagendaModel.tbagenda">
+        <MappingFragment StoreEntitySet="tbagenda">
+          <ScalarProperty Name="cod_agenda" ColumnName="cod_agenda" />
+          <ScalarProperty Name="cod_usuario" ColumnName="cod_usuario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbarchivo">
+      <EntityTypeMapping TypeName="bdagendaModel.tbarchivo">
+        <MappingFragment StoreEntitySet="tbarchivo">
+          <ScalarProperty Name="cod_archivo" ColumnName="cod_archivo" />
+          <ScalarProperty Name="cod_notas" ColumnName="cod_notas" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="formato" ColumnName="formato" />
+          <ScalarProperty Name="tamaño" ColumnName="tamaño" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbnotas">
+      <EntityTypeMapping TypeName="bdagendaModel.tbnotas">
+        <MappingFragment StoreEntitySet="tbnotas">
+          <ScalarProperty Name="cod_notas" ColumnName="cod_notas" />
+          <ScalarProperty Name="cod_agenda" ColumnName="cod_agenda" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbpersona">
+      <EntityTypeMapping TypeName="bdagendaModel.tbpersona">
+        <MappingFragment StoreEntitySet="tbpersona">
+          <ScalarProperty Name="cod_persona" ColumnName="cod_persona" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ap_paterno" ColumnName="ap_paterno" />
+          <ScalarProperty Name="ap_materno" ColumnName="ap_materno" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbusuario">
+      <EntityTypeMapping TypeName="bdagendaModel.tbusuario">
+        <MappingFragment StoreEntitySet="tbusuario">
+          <ScalarProperty Name="cod_usuario" ColumnName="cod_usuario" />
+          <ScalarProperty Name="cod_persona" ColumnName="cod_persona" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,36 @@
+﻿@model MvcApplication1.Models.tbagenda
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbagenda</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cod_agenda)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cod_agenda)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbusuario.login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbusuario.login)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

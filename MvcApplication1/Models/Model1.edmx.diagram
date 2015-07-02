@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2142ffb4092d4fc5b39e915a8006e419" Name="Diagram1">
+        <EntityTypeShape EntityType="bdagendaModel.tbagenda" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdagendaModel.tbarchivo" Width="1.5" PointX="9.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdagendaModel.tbnotas" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdagendaModel.tbpersona" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdagendaModel.tbusuario" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="bdagendaModel.fk_agenda_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="bdagendaModel.fk_notas_agenda" ManuallyRouted="false" />
+        <AssociationConnector Association="bdagendaModel.FK_tbarchivo" ManuallyRouted="false" />
+        <AssociationConnector Association="bdagendaModel.fk_usuario_persona" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

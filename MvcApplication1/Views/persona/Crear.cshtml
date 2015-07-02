@@ -1,0 +1,47 @@
+﻿@model MvcApplication1.Models.tbpersona
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Crear</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("crear", "persona", FormMethod.Post))
+        {
+        <table border="1" align="center">
+            <tr>
+                <th colspan="2">INTRODUZCA DATOS</th>
+            </tr>
+            <tr>
+                <td> @Html.Label("NOmbre")</td>
+                <td> @Html.TextBoxFor(model=>model.nombre)</td>
+            </tr>
+
+            <tr>
+                <td> @Html.Label("Apellido paterno")</td>
+                <td> @Html.TextBoxFor(model=>model.ap_paterno)</td>
+            </tr>
+            <tr>
+                <td> @Html.Label("Apellido materno")</td>
+                <td> @Html.TextBoxFor(model=>model.ap_materno)</td>
+            </tr>
+            <tr>
+                <td> @Html.Label("Estado")</td>
+                <td> @Html.TextBoxFor(model=>model.estado)</td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><input type="submit" value="subir" /></td>
+            </tr>
+        </table>
+            
+        }
+    </div>
+</body>
+</html>
